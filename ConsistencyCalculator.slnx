@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ConsistencyCalculator.Core/ConsistencyCalculator.Core.csproj" />
+  <Project Path="ConsistencyCalculator.Desktop/ConsistencyCalculator.Desktop.csproj" />
+  <Project Path="ConsistencyCalculator.Infrastructure/ConsistencyCalculator.Infrastructure.csproj" />
+</Solution>

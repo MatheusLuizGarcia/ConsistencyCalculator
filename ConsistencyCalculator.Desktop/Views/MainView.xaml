@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ConsistencyCalculator.Desktop.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ConsistencyCalculator.Desktop.ViewModels"
+             xmlns:views="clr-namespace:ConsistencyCalculator.Desktop.Views">
+
+    <UserControl.DataContext>
+        <vm:MainViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Deck">
+                <views:DeckEditorView
+                    DataContext="{Binding DeckEditor}"/>
+            </TabItem>
+
+            <TabItem Header="Simulation">
+                <views:SimulationView 
+                    DataContext="{Binding Simulation}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

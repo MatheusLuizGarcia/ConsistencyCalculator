@@ -1,0 +1,57 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Rider / JetBrains
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Debug / Release
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+
+# EF Core
+Migrations/*.Designer.cs
+Migrations/*.Designer.cs.meta
+
+# Coverage
+coverage/
+coverage.xml
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.temp

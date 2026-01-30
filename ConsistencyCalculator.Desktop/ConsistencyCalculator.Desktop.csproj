@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Assets\Styles\TextBoxPlaceholder.xaml.cs" />
+    <Compile Remove="ViewModels\Class1.cs" />
+    <Compile Remove="ViewModels\SimulationRowViewModel.cs" />
+    <Compile Remove="ViewModels\ViewModelBase.cs" />
+    <Compile Remove="Views\Simulation.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\Simulation.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Icons\" />
+	<Folder Include="Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConsistencyCalculator.Core\ConsistencyCalculator.Core.csproj" />
+    <ProjectReference Include="..\ConsistencyCalculator.Infrastructure\ConsistencyCalculator.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ConsistencyCalculator.Desktop.Views.SimulationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Margin="10">
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Iterations:"
+                       VerticalAlignment="Center"/>
+
+            <TextBox Width="120"
+                     Text="{Binding Iterations, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Condition:"/>
+            <TextBox Width="350"
+                     Text="{Binding ConditionDescription, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <Button Content="Start Simulation"
+                Width="160"
+                Margin="0 5 0 5"
+                Command="{Binding RunSimulationCommand}"/>
+
+        <TextBlock FontSize="14"
+                   FontWeight="Bold"
+                   Text="{Binding ResultText}" />
+    </StackPanel>
+</UserControl>
