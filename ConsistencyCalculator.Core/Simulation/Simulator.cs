@@ -34,8 +34,8 @@ namespace ConsistencyCalculator.Core.Simulation
                 if (ok5) success5++;
                 if (ok6) success6++;
 
-                UpdateTagStats(tagStats5, hand5);
-                UpdateTagStats(tagStats6, hand6);
+                UpdateTagStats(tagStats5, hand5, request.Condition);
+                UpdateTagStats(tagStats6, hand6, request.Condition);
             }
 
             return new SimulationResult(
@@ -52,15 +52,23 @@ namespace ConsistencyCalculator.Core.Simulation
                 t => new TagStatistics(t),
                 StringComparer.OrdinalIgnoreCase);
         }
-
         private void UpdateTagStats(
             Dictionary<string, TagStatistics> stats,
-            Hand hand)
+            Hand hand,
+            ISimulationCondition condition)
         {
+            if (condition is not TagComparisonCondition tagCondition)
+                return;
+
             foreach (var kv in stats)
             {
-                bool present = hand.Cards.Any(c => c.Tags.Contains(kv.Key));
-                kv.Value.Register(present);
+                int count = hand.Cards.Count(c => c.Tags.Contains(kv.Key));
+
+                bool contributes = tagCondition.Operator.Compare(
+                    count,
+                    tagCondition.Value);
+
+                kv.Value.Register(contributes);
             }
         }
 
